@@ -1,0 +1,36 @@
+.header {
+  height: 40px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #202020;
+}
+
+.header__item {
+  padding: 10px;
+}
+
+.icon {
+  color: #ffd700
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav__list > li {
+  padding-right: 15px;
+}
+
+.nav__button {
+  float: right;
+  padding: 0 10px;
+  margin-right: 10px;
+  border: 1px solid #8400ff;
+  border-radius: 5px;
+  color: #00ff22;
+  background: none;
+}

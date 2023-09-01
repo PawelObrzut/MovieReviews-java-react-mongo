@@ -7,6 +7,7 @@ import { Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import { IMovie } from './types/types'
 import Loading from './components/Loading';
+import Header from './components/Header';
 
 function App() {
   const [movies, setMovies] = useState<IMovie[] | undefined>();
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="app">
+      <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
           {movies !== undefined ? (
