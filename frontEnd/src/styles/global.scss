@@ -1,7 +1,12 @@
 @use "helper" as *;
+@use "./components/hero.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.mainContainer {
-  background-color: rgb(104, 48, 48);
-  color: white;
-  font-size: 1.5rem;
+.app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  color:white;
+  margin-top:10px;
 }

@@ -2,11 +2,14 @@ import './styles/global.scss';
 import api from './api/axiosConfig';
 import { useState, useEffect } from 'react';
 import Layout from './components/Layout';
-import Home from './components/Home';
+
 import { Routes, Route} from 'react-router-dom';
+import Home from './components/Home';
+import { IMovie } from './types/types'
+import Loading from './components/Loading';
 
 function App() {
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState<IMovie[] | undefined>();
 
   const getMovies = async () => {
     try {
@@ -22,10 +25,14 @@ function App() {
   }, [])
 
   return (
-    <div className="mainContainer">
+    <div className="app">
       <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Layout />}>
+          {movies !== undefined ? (
+            <Route path="/" element={<Home movies={movies} />} />
+          ) : (
+            <Route path="/" element={<Loading />} />
+          )}
         </Route>
       </Routes>
     </div>

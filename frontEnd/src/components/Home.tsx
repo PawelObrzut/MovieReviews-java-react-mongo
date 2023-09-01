@@ -1,10 +1,9 @@
-import React from 'react'
+import { IMovie } from '../types/types'
+import Hero from './Hero'
 
-const Home = () => {
+const Home = ({movies} : {movies: IMovie[]})=> {
   return (
-    <div>
-      Welcome
-    </div>
+    <Hero movies = {movies} />
   )
 }
 
