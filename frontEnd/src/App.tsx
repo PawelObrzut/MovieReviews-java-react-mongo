@@ -8,6 +8,7 @@ import Home from './components/Home';
 import { IMovie } from './types/types'
 import Loading from './components/Loading';
 import Header from './components/Header';
+import Trailer from './components/Trailer';
 
 function App() {
   const [movies, setMovies] = useState<IMovie[] | undefined>();
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" element={<Loading />} />
           )}
         </Route>
+        <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
       </Routes>
     </div>
   )

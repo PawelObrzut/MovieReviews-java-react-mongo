@@ -4,8 +4,8 @@
 }
 
 .carousel__card {
-    height: 550px;
-    background-color: black;
+  height: 550px;
+  background-color: black;
 }
 
 .carousel__card--movie {
@@ -40,4 +40,38 @@
   color:white;
   display: flex;
   align-items: center;
+}
+
+.movie__player{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:300px;
+}
+
+.play__button {
+  padding:0px;
+  margin:0px;
+  width:150px;
+}
+
+.play__button--icon {
+  padding:0px;
+  margin:0px;
+  color:gold;
+  font-size: 3rem;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    font-size: 4rem;
+    color:white;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .movie{
+      flex-direction: column;
+      align-items: center;
+      top:20px;
+  }
 }

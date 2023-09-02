@@ -2,6 +2,9 @@ import React from 'react';
 import { IMovie } from '../types/types';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Hero = ({ movies }: { movies: IMovie[] }) => {
   return (
@@ -19,6 +22,13 @@ const Hero = ({ movies }: { movies: IMovie[] }) => {
                       </div>
                       <div className="movie__title">
                         <h4>{movie.title}</h4>
+                      </div>
+                      <div className="movie__player">
+                        <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`} >
+                          <div className="play__button">
+                            <FontAwesomeIcon className="play__button--icon" icon={faCirclePlay} />
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
