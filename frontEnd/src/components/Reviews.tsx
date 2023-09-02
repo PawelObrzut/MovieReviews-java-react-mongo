@@ -1,5 +1,5 @@
 import { useParams}  from 'react-router-dom';
-import { IMovie } from '../types/types';
+import { IMovie, IReviewIds } from '../types/types';
 import ReviewForm from './ReviewForm';
 import api from '../api/axiosConfig';
 import { useEffect, useState } from 'react';
@@ -31,7 +31,16 @@ const Reviews = () => {
         <img className="poster" src={movie?.poster} alt={movie?.poster} />
         <div>
           <h3>Write a review?</h3>
-          <ReviewForm />
+          <ReviewForm getMovieData={getMovieData} movieId={movieId} />
+          <ul role="list">
+            {
+              movie?.reviewIds?.map((review : IReviewIds) => (
+                <li key={review.id.timestamp}>
+                  {review.body}
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     </div>

@@ -10,5 +10,13 @@ export interface IMovie {
   poster: string;
   genres: string[];
   backdrops: string[];
-  reviewIds: string[];
+  reviewIds?: IReviewIds[]
+}
+
+export interface IReviewIds {
+  id: {
+    timestamp: number,
+    date: string
+  },
+  body: string
 }
