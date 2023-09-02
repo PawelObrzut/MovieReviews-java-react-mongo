@@ -1,0 +1,16 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    font-size: 2rem;
+    padding-left: 20px;
+  }
+}
+
+.reviews--movie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1rem;
+}

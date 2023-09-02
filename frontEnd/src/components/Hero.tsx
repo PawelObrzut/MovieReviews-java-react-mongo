@@ -4,9 +4,11 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Hero = ({ movies }: { movies: IMovie[] }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="carousel">
       <Carousel>
@@ -15,7 +17,7 @@ const Hero = ({ movies }: { movies: IMovie[] }) => {
             return (
               <Paper key={movie.imdbId}>
                 <div className="carousel__card">
-                  <div className="carousel__card--movie" style={{ "--img" : `url(${movie.backdrops[0]})` } as React.CSSProperties}>
+                  <div className="carousel__card--movie" style={{ "--img": `url(${movie.backdrops[0]})` } as React.CSSProperties}>
                     <div className="movie">
                       <div className="movie__poster">
                         <img src={movie.poster} alt={movie.poster} />
@@ -29,6 +31,9 @@ const Hero = ({ movies }: { movies: IMovie[] }) => {
                             <FontAwesomeIcon className="play__button--icon" icon={faCirclePlay} />
                           </div>
                         </Link>
+                        <div className="movie-review-button-container">
+                          <button className="button" onClick={() => navigate(`/Reviews/${movie.imdbId}`)} >Reviews</button>
+                        </div>
                       </div>
                     </div>
                   </div>

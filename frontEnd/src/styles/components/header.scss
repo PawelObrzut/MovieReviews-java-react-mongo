@@ -1,5 +1,5 @@
 .header {
-  height: 40px;
+  height: 50px;
   align-items: center;
   display: flex;
   width: 100%;
@@ -25,12 +25,21 @@
   padding-right: 15px;
 }
 
-.nav__button {
+.button {
   float: right;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin-right: 10px;
-  border: 1px solid #8400ff;
+  border: 1px solid #0080ff;
   border-radius: 5px;
-  color: #00ff22;
+  color: #0080ff;
   background: none;
+  cursor: pointer;
+  &:hover {
+    color: #00ff08;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,0 +1,13 @@
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items:flex-start;
+}
+
+textarea {
+  min-width: 500px;
+  background-color: rgb(71, 71, 71);
+  color: white;
+  border-radius: 10px;
+}

@@ -1,14 +1,15 @@
-import './styles/global.scss';
+import { useEffect, useState } from 'react';
 import api from './api/axiosConfig';
-import { useState, useEffect } from 'react';
 import Layout from './components/Layout';
+import './styles/global.scss';
 
-import { Routes, Route} from 'react-router-dom';
-import Home from './components/Home';
-import { IMovie } from './types/types'
-import Loading from './components/Loading';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
+import Loading from './components/Loading';
+import Reviews from './components/Reviews';
 import Trailer from './components/Trailer';
+import { IMovie } from './types/types';
 
 function App() {
   const [movies, setMovies] = useState<IMovie[] | undefined>();
@@ -38,6 +39,8 @@ function App() {
           )}
         </Route>
         <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
+        <Route path="/Reviews/:movieId" element ={<Reviews />}></Route>
+            
       </Routes>
     </div>
   )
